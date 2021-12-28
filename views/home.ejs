@@ -1,0 +1,132 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+
+
+            <% if(locals.message) {%>
+
+            <% if(message){ %>
+            <div class="alert alert-success alert-dismissible">
+                <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong><%= message%> </strong>
+            </div>
+            <% } %>
+
+            <% } %>
+ 
+            <h1 class="text-center mb-3">
+                Welcome <%= data[0].fname %>
+            </h1>
+
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">First Name</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].fname %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Last Name</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].lname %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Email</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].email %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Employee Number</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].empNo %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Company Name</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].companyName %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Date of birth</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].dob %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Gender</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].gender %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">NIC Number</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].nic %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Marital Status</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].maritalStatus %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Address</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].address %></label>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-sm">
+                    <label for="name">Designation</label>
+                </div>
+                <div class="col-sm">
+                    <label for="name"><%= data[0].designation %></label>
+                </div>
+            </div>
+
+            <br>
+
+            <p class="lead mt-4">Do you need to change data? <a href="/users/userEdit/<%= data[0].email %>">Edit</a></p>
+
+            <p class="lead mt-4">Do you need to Delete data? <a onclick="return alert('Are You sure?')"
+                    href="/users/userDelete/<%= data[0].email %>">Delete</a>
+            </p>
+
+            <p class="lead mt-4">Do you need to Go Home? <a href="/">Home</a></p>
+        </div>
+    </div>
+</div>

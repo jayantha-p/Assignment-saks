@@ -1,0 +1,56 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+           
+            <h1 class="text-center mb-3">
+                Register
+            </h1>
+
+            <form action="/users/register" method="POST">
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="name" id="fname" name="fname" class="form-control" placeholder="Enter First Name"  required="true"
+                        value="<%= typeof name != 'undefined' ? name : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="name" id="lname" name="lname" class="form-control" placeholder="Enter Last Name" required="true"
+                        value="<%= typeof name != 'undefined' ? name : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="name">Date of birth</label>
+                    <input type="date" id="dob" name="dob" class="form-control" placeholder="dob"  required="true"
+                        value="<%= typeof name != 'undefined' ? name : '' %>" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" 
+                        value="<%= email %>" readonly />
+
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Gender</label>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="gender" id="male" value="male">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="gender" id="female" value="female">
+                            Female
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Register
+                </button>
+            </form>
+            <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+        </div>
+    </div>
+</div>

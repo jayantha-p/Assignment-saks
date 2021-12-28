@@ -1,0 +1,65 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+
+        
+        <% if(locals.message) {%>
+
+          <% if(message){ %>
+          <div class="alert alert-danger alert-dismissible">
+            <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong><%= message%> </strong>
+          </div>
+          <% } %>
+    
+          <% } %>
+        
+          <% if(locals.successmessage) {%>
+    
+            <% if(successmessage){ %>
+            <div class="alert alert-success alert-dismissible">
+              <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
+              <strong><%= successmessage%> </strong>
+            </div>
+            <% } %>
+      
+            <% } %>
+
+        <h1 class="text-center mb-3">Email Verify for Login</h1>
+
+        <form  method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter Email"
+              <% if(locals.email) {%> value="<%= email %>" <% } %>
+            />
+          </div>
+          
+          <input type="hidden" name="page" value="login">
+
+          <button type="submit" formaction="/users/regOtp"  class="btn btn-primary btn-block">Send OTP</button>
+
+          <div class="form-group">
+            <br>
+
+            <label>Please enter verificattion code which reseved to the mail</label>
+            <br>
+            <label for="otp">OTP</label>
+            <input
+              type="text"
+              id="otp"
+              name="otp"
+              class="form-control"
+              placeholder="Enter OTP"
+            />
+          </div>
+          <button type="submit" formaction="/users/validateOtp" class="btn btn-primary btn-block">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
